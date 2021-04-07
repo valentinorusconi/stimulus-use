@@ -5,7 +5,7 @@ export const method = (controller: Controller, methodName: string): Function => 
   if (typeof method == 'function') {
     return method
   } else {
-    return (...args: any[]) => {}
+    return (...args: any[]) => { }
   }
 }
 
@@ -47,3 +47,6 @@ export function isElementInViewport(el: Element) {
   return (vertInView && horInView)
 }
 
+export function camelize(value: string) {
+  return value.replace(/(?:[_-])([a-z0-9])/g, (_, char) => char.toUpperCase())
+}
